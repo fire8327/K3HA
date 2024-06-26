@@ -72,7 +72,7 @@
             </div> 
             <img src="/images/categories/4.jpg" alt="" class="w-full lg:w-1/2 rounded-xl aspect-video object-cover lg:order-first">
         </div>
-        <NuxtLink class="px-4 py-2 rounded-xl border border-[#292929] self-end">В каталог</NuxtLink>
+        <NuxtLink to="/catalog" class="px-4 py-2 rounded-xl border border-[#292929] self-end">В каталог</NuxtLink>
     </div>
     <div class="flex flex-col gap-6">
         <p class="font-Roboto-Slab text-3xl font-semibold tracking-wider">Контакты</p>
@@ -80,7 +80,3 @@
         <NuxtLink to="/about" class="px-4 py-2 rounded-xl border border-[#292929] self-end">Узнать больше</NuxtLink>
     </div>
 </template>
-
-<script setup>
-
-</script>

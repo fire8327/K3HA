@@ -6,7 +6,7 @@
             </NuxtLink>
             <nav class="flex items-center gap-6 max-lg:flex-col max-lg:bg-[#f4f6fb] max-lg:border-t border-[#292929] max-lg:py-6 max-lg:w-full max-lg:absolute max-lg:left-0 transition-all duration-500 z-[5]" :class="isMenuShow ? 'max-lg:top-full' : 'max-lg:top-0 max-lg:-translate-y-full'">
                 <NuxtLink to="/" class="flex flex-col after:w-0 after:h-px after:bg-[#292929] after:duration-500 after:transition-all hover:after:w-full">Главная</NuxtLink>
-                <NuxtLink class="flex flex-col after:w-0 after:h-px after:bg-[#292929] after:duration-500 after:transition-all hover:after:w-full">Каталог</NuxtLink>
+                <NuxtLink to="/catalog" class="flex flex-col after:w-0 after:h-px after:bg-[#292929] after:duration-500 after:transition-all hover:after:w-full">Каталог</NuxtLink>
                 <NuxtLink to="/about" class="flex flex-col after:w-0 after:h-px after:bg-[#292929] after:duration-500 after:transition-all hover:after:w-full">О нас</NuxtLink>
                 <div class="flex items-center gap-4">
                     <NuxtLink v-if="authenticated" to="/cart">
