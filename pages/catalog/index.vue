@@ -21,8 +21,8 @@
             </FormKit>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full lg:w-3/4">
                 <div class="flex flex-col gap-6 rounded-xl p-4 border border-[#292929]/50 group" v-for="product in products">
-                    <div class="overflow-hidden rounded-xl">                    
-                        <img :src="product.image" alt="" class="transition-all duration-500 group-hover:scale-125 w-full aspect-video object-cover">
+                    <div class="overflow-hidden rounded-xl border border-[#292929]/15">                    
+                        <img :src="`https://jgbtutmwtokvxnsixujt.supabase.co/storage/v1/object/public/images/products/${product.image}`" alt="" class="transition-all duration-500 group-hover:scale-125 w-full aspect-video object-cover">
                     </div>
                     <p class="text-2xl font-Roboto-Slab">{{ product.name }}</p>
                     <p class="text-3xl font-Roboto-Slab mt-auto">{{ product.price.toLocaleString() }} ₽</p>
@@ -39,6 +39,7 @@
     const { data, error } = await supabase
     .from('products')
     .select('*')  
+    .order('id', { ascending: true })
 
     const products = ref(data)
 
