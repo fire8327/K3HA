@@ -4,13 +4,19 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/icon",
-    "@nuxtjs/google-fonts"
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@nuxtjs/supabase",
+    "@formkit/nuxt"
   ],  
   googleFonts: {
     families: {
       'Roboto': true,
       'Roboto Slab': true
     }
+  },
+  supabase: {
+    redirect: false
   },
   postcss: {
     plugins: {
