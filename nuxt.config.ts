@@ -1,5 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"]
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/icon",
+    "@nuxtjs/google-fonts"
+  ],  
+  googleFonts: {
+    families: {
+      'Roboto': true,
+      'Roboto Slab': true
+    }
+  },
+  postcss: {
+    plugins: {
+      cssnano: false 
+    }
+  }
 })
