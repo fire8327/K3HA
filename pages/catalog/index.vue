@@ -20,13 +20,13 @@
                 </div>
             </FormKit>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full lg:w-3/4">
-                <div class="flex flex-col gap-6 rounded-xl p-4 border border-[#292929]/50 group" v-for="product in products">
+                <NuxtLink :to="`/catalog/product-${product.id}`" class="flex flex-col gap-6 rounded-xl p-4 border border-[#292929]/50 group" v-for="product in products">
                     <div class="overflow-hidden rounded-xl border border-[#292929]/15">                    
                         <img :src="`https://jgbtutmwtokvxnsixujt.supabase.co/storage/v1/object/public/images/products/${product.image}`" alt="" class="transition-all duration-500 group-hover:scale-125 w-full aspect-video object-cover">
                     </div>
                     <p class="text-2xl font-Roboto-Slab">{{ product.name }}</p>
                     <p class="text-3xl font-Roboto-Slab mt-auto">{{ product.price.toLocaleString() }} ₽</p>
-                </div>
+                </NuxtLink>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
 
 
     /* фильтрация */
-    const selectType = ['Все', ...new Set(data.map(item => item.characteristics.type))]
+    const selectType = ['Все', ...new Set(data.map(item => item.type))]
 
     const filters = ref({
         minPrice: null,
@@ -56,7 +56,7 @@
     const filterProducts = () => {
         products.value = data
         const filter = products.value.filter(el => {
-            if ((filters.value.type != 'Все' && el.characteristics.type != filters.value.type) ||
+            if ((filters.value.type != 'Все' && el.type != filters.value.type) ||
                 (filters.value.minPrice && el.price < filters.value.minPrice) ||
                 (filters.value.maxPrice && el.price > filters.value.maxPrice)) {
                 return false
